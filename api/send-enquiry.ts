@@ -134,11 +134,7 @@ export const POST = async (request: Request) => {
       });
     }
   } catch (error) {
-    console.error('Failed to send enquiry email:', {
-      gmailUser,
-      appPasswordLength: gmailAppPassword.length,
-      error,
-    });
+    console.error('Failed to send enquiry email:', error);
     return jsonResponse({ error: 'Unable to send enquiry right now.' }, 502);
   }
 
