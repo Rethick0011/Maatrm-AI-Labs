@@ -1,8 +1,8 @@
 export default function EnhancedFooter() {
   const sections = [
-    { title: 'Company', links: ['About', 'Founders', 'Contact'] },
+    { title: 'Company', links: ['About', 'Contact'] },
     { title: 'Services', links: ['Custom Software', 'AI Solutions', 'Automation'] },
-    { title: 'Resources', links: ['Projects', 'Industries', 'Process'] },
+    { title: 'Resources', links: ['Products', 'Industries', 'Process'] },
   ];
 
   return (
@@ -14,7 +14,9 @@ export default function EnhancedFooter() {
             <p className="text-slate-500 mb-6">
               Freelance IT solutions, custom software, automation, dashboards, and AI systems for small to medium-scale industries.
             </p>
-            <p className="text-slate-500">Founders: Raghav Somasundaram PL and Rethick R</p>
+            <a href="tel:+918110911006" className="text-slate-500 hover:text-gold">
+              +91 81109 11006
+            </a>
           </div>
           {sections.map((s) => (
             <div key={s.title}>
@@ -22,7 +24,7 @@ export default function EnhancedFooter() {
               <ul className="space-y-2">
                 {s.links.map((l) => (
                   <li key={l}>
-                    <a href="#contact" className="text-slate-400 hover:text-gold">{l}</a>
+                    <a href={l === 'Products' ? '/products' : '/#contact'} className="text-slate-400 hover:text-gold">{l}</a>
                   </li>
                 ))}
               </ul>
